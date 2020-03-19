@@ -104,7 +104,6 @@ public class LinkedList {
     //        return Object if n < size(), null otherwise
     public Object remove(int n) {
         Node currentNode = head, previous = new Node(null);
-        Object deleted = null;
         if (n < this.size()) {
             if (n == 0) {
                 head = currentNode.getNext();
@@ -116,7 +115,7 @@ public class LinkedList {
                         previous.next = currentNode.getNext();
                         return currentNode.getPayload();
                     } else {
-                        previous = currentNode;
+                        //previous = currentNode;
                         currentNode = currentNode.getNext();
                         counter++;
                     }
