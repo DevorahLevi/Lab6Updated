@@ -105,7 +105,7 @@ public class LinkedList {
     public Object remove(int n) {
         Node currentNode = head, previous = new Node(null);
         if (n < this.size()) {
-            if (n == 0) {
+            if (n == 0) {   //THIS IF STATEMENT CAUSES THE TEST TO RUN PERFECTLY. BUT WHEN N IS NOT 0, IT FAILS
                 head = currentNode.getNext();
                 return currentNode.getPayload();
             } else {

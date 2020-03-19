@@ -75,8 +75,8 @@ public class LinkedListTest {
         Integer j37 = new Integer(37);
         LinkedList linkedList = new LinkedList(i12);
         linkedList.insert(j37);
-        Integer actualInteger = (Integer)linkedList.remove(1);//**
-        assertEquals(i12, actualInteger);//**
+        Integer actualInteger = (Integer)linkedList.remove(1);//** Additional Test for when n is not 0
+        assertEquals(i12, actualInteger);                        //** Additional Test for when n is not 0
         //Integer actualInteger = (Integer) linkedList.remove(0);
         //assertEquals(j37, actualInteger);
         assertEquals(1, linkedList.size());
