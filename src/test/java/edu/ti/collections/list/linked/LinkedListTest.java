@@ -75,8 +75,10 @@ public class LinkedListTest {
         Integer j37 = new Integer(37);
         LinkedList linkedList = new LinkedList(i12);
         linkedList.insert(j37);
-        Integer actualInteger = (Integer) linkedList.remove(0);
-        assertEquals(j37, actualInteger);
+        Integer actualInteger = (Integer)linkedList.remove(1);//**
+        assertEquals(i12, actualInteger);//**
+        //Integer actualInteger = (Integer) linkedList.remove(0);
+        //assertEquals(j37, actualInteger);
         assertEquals(1, linkedList.size());
         assertEquals(i12, linkedList.get(0));
     }
