@@ -108,7 +108,8 @@ public class LinkedList {
         Object remove = null;
         if (n < this.size() && (head != null))
         {
-            if (n == 0) {   //THIS IF STATEMENT CAUSES THE TEST TO RUN PERFECTLY. BUT WHEN N IS NOT 0, IT FAILS
+            if (n == 0)
+            {
                 head = currentNode.getNext();
                 remove = currentNode.getPayload();
             }
@@ -128,6 +129,42 @@ public class LinkedList {
     //TODO -- implement remove to remove given object from list,
     //        return Object if object is in the list, null otherwise
     public Object remove(Object object) {
-        return null;
+        Node currentNode = head;
+        Node previous = null;
+        Object remove = null;
+        if (head != null)
+        {
+            if (object.equals(head))
+            {
+                head = currentNode.getNext();
+                remove = currentNode.getPayload();
+            }
+            else
+            {
+                boolean objectFound = false;
+                for (int count = 0; count < this.size(); count++)
+                {
+                    if (currentNode.getPayload().equals(object))
+                    {
+                        objectFound = true;
+                    }
+                    else
+                    {
+                        previous = currentNode;
+                        currentNode = currentNode.getNext();
+                    }
+                }
+                if (objectFound)
+                {
+                    previous.setNext(currentNode.getNext());
+                    remove = currentNode.getPayload();
+                }
+                else
+                {
+                    remove = null;
+                }
+            }
+        }
+        return remove;
     }
 }

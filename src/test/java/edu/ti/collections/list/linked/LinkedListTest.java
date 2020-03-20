@@ -75,12 +75,38 @@ public class LinkedListTest {
         Integer j37 = new Integer(37);
         LinkedList linkedList = new LinkedList(i12);
         linkedList.insert(j37);
-        Integer actualInteger = (Integer)linkedList.remove(1);//** Additional Test for when n is not 0
-        assertEquals(i12, actualInteger);                        //** Additional Test for when n is not 0
-        //Integer actualInteger = (Integer) linkedList.remove(0);
-        //assertEquals(j37, actualInteger);
+        Integer actualInteger = (Integer) linkedList.remove(0);
+        assertEquals(j37, actualInteger);
         assertEquals(1, linkedList.size());
         assertEquals(i12, linkedList.get(0));
+    }
+
+    @Test
+    public void testDeleteCorrectElementByPositionSecond() {
+        Integer i12 = new Integer(12);
+        Integer j37 = new Integer(37);
+        Integer k34 = new Integer(34);
+        LinkedList linkedList = new LinkedList(i12);
+        linkedList.insert(j37);
+        linkedList.insert(k34);
+        Integer actualInteger = (Integer) linkedList.remove(1);
+        assertEquals(j37, actualInteger);
+        assertEquals(2, linkedList.size());
+        assertEquals(k34, linkedList.get(0));
+    }
+
+    @Test
+    public void testDeleteCorrectElementByPositionThird() {
+        Integer i12 = new Integer(12);
+        Integer j37 = new Integer(37);
+        Integer k34 = new Integer(34);
+        LinkedList linkedList = new LinkedList(i12);
+        linkedList.insert(j37);
+        linkedList.insert(k34);
+        Integer actualInteger = (Integer) linkedList.remove(2);
+        assertEquals(i12, actualInteger);
+        assertEquals(2, linkedList.size());
+        assertEquals(k34, linkedList.get(0));
     }
 
     @Test
