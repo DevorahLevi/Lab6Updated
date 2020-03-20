@@ -118,7 +118,7 @@ public class LinkedList {
                     previous = currentNode;
                     currentNode = currentNode.getNext();
                 }
-                previous = currentNode.getNext();
+                previous.setNext(currentNode.getNext());
                 remove = currentNode.getPayload();
             }
         }
