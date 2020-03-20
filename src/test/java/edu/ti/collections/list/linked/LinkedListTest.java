@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+//**TESTS are all passing and TO DO's are completed.
+
 public class LinkedListTest {
     @Test
     public void testNewEmptyListIsEmpty() {
